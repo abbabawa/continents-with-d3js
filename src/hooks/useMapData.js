@@ -1,7 +1,7 @@
 import * as d3 from "d3";
 import { useState, useEffect } from "react";
 
-export const useMapData = function () {
+export const useMapData = function (url) {
   // store loaded map data in a state
   const [mapData, setMapData] = useState({
     data: {},
@@ -10,7 +10,7 @@ export const useMapData = function () {
 
   // only fetch map data once and create a tooltip
   useEffect(() => {
-    d3.json("./custom.geo.json")
+    d3.json(url)
       .then((data) => {
         setMapData((prevState) => {
           return { ...prevState, data: data, loading: false };
@@ -26,7 +26,7 @@ export const useMapData = function () {
       .attr("id", "tooltip")
       .attr("style", "position: absolute; opacity: 0");
     ///
-  }, []);
+  }, [url]);
 
   return { mapData };
 };
