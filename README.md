@@ -2,6 +2,9 @@
 
 Continents with d3js is a simple reactjs project which aims to demonstrate the creation of maps using d3js package and geojson data
 
+#### Resources used
+https://blog.devgenius.io/map-rendering-using-react-with-d3-js-76e12f77eb2c
+
 ## Available Scripts
 
 In the project directory, you can run:
